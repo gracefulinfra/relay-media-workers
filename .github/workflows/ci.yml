@@ -16,7 +16,7 @@ env:
 
 jobs:
   lint:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
     steps:
@@ -32,7 +32,7 @@ jobs:
           version: v2.14.0
 
   test:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
     steps:
@@ -47,7 +47,7 @@ jobs:
         run: echo "::notice title=Pending tests::Only build-info unit tests ran. Integration tests come later."
 
   vuln:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
     steps:
@@ -61,7 +61,7 @@ jobs:
 
   image:
     needs: [lint, test, vuln]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
       packages: write # push to GHCR (main only)
