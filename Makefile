@@ -5,7 +5,7 @@ NAME := relay-media-workers
 IMAGE ?= ghcr.io/gracefulinfra/$(NAME)
 COMMIT := $(shell git rev-parse HEAD 2>/dev/null || echo unknown)
 # renovate: datasource=github-releases depName=golangci/golangci-lint
-GOLANGCI_LINT_VERSION ?= 2.14.0
+GOLANGCI_LINT_VERSION ?= 2.15.0
 
 .PHONY: help dev test lint vuln build image
 
